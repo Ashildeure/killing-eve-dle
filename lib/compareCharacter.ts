@@ -1,7 +1,13 @@
 import { Character } from "@/types/character"
 
-function hasMatch(arr1: string[], arr2: string[]) {
-  return arr1.some(value => arr2.includes(value))
+function compareArray(arr1: string[], arr2: string[]) {
+  const common = arr1.filter(value => arr2.includes(value))
+
+  if (common.length === 0) return false
+  if (common.length === arr1.length && common.length === arr2.length)
+    return "correct"
+
+  return "semi"
 }
 
 export function compareCharacter(
@@ -9,16 +15,19 @@ export function compareCharacter(
   solution: Character
 ) {
   return {
+    name: guess.id === solution.id ? "correct" : false,
+
     seasonStart:
       guess.seasonStart === solution.seasonStart
         ? "correct"
-        : guess.seasonStart > solution.seasonStart
+        : guess.seasonStart < solution.seasonStart
         ? "higher"
         : "lower",
 
-    occupations: hasMatch(guess.occupations, solution.occupations),
-    affiliations: hasMatch(guess.affiliations, solution.affiliations),
-    nationalities: hasMatch(guess.nationalities, solution.nationalities),
+    occupations: compareArray(guess.occupations, solution.occupations),
+    affiliations: compareArray(guess.affiliations, solution.affiliations),
+    nationalities: compareArray(guess.nationalities, solution.nationalities),
+
     gender: guess.gender === solution.gender
   }
 }

@@ -81,7 +81,7 @@ export default function GameBoard() {
               className="play-again"
               style={{marginTop:'1rem'}}
             >
-              🔁 Play Again
+              ⭮ Play Again
             </button>
           </div>
         )}

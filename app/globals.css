@@ -4,7 +4,7 @@ html, body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   background: linear-gradient(to bottom, #000000, #111111);
   color: #fff;
-  min-height: 100%;
+  min-height: 100vh;
   scroll-behavior: smooth;
 }
 
@@ -71,20 +71,17 @@ p {
 }
 
 .feedback-box.correct {
-  background-color: #222;
-  color: #666;
-  border: 1px solid #333;
-}
-
-.feedback-box.higher {
-  background-color: #3b82f6;
+  background-color: #1e3a8a;   /* bleu foncé */
+  border: 1px solid #3b82f6;
   color: white;
 }
 
-.feedback-box.lower {
-  background-color: #facc15;
+.feedback-box.semi-correct {
+  background-color: #b98f1c;
   color: white;
+  border: 1px solid #f8cd71;
 }
+
 
 /* Input autocomplete */
 input.guess-input {
@@ -97,6 +94,7 @@ input.guess-input {
   font-size: 1rem;
   outline: none;
   transition: all 0.2s ease;
+  box-sizing: border-box;
 }
 
 input.guess-input:focus {
@@ -107,8 +105,8 @@ input.guess-input:focus {
 /* Dropdown autocomplete */
 .autocomplete-dropdown {
   position: absolute;
-  left: 0;
-  width: 100%;
+  left: 54px;
+  width: 90.5%;
   max-height: 15rem;
   overflow-y: auto;
   background-color: #111;
