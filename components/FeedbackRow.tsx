@@ -1,34 +1,30 @@
 import { Character } from "@/types/character"
 
 type Props = {
-    guess: Character
-    feedback: any
+  guess: Character
+  feedback: any
 }
 
 function box(value: string | number, status: string | boolean) {
-    let bg = "bg-gray-700"
+  let className = "feedback-box"
 
-    if (status === true || status === "correct") bg = "bg-green-600"
-    if (status === false) bg = "bg-red-600"
-    if (status === "higher") bg = "bg-yellow-500"
-    if (status === "lower") bg = "bg-blue-500"
+  if (status === true || status === "correct") className += " correct"
+  else if (status === false) className += " incorrect"
+  else if (status === "higher") className += " higher"
+  else if (status === "lower") className += " lower"
 
-    return (
-    <div className={`${bg} p-2 rounded text-sm`}>
-        {value}
-    </div>
-    )
+  return <div className={className}>{value}</div>
 }
 
 export default function FeedbackRow({ guess, feedback }: Props) {
-    return (
-    <div className="grid grid-cols-6 gap-2 mt-2">
-        {box(guess.name, true)}
-        {box(guess.seasonStart, feedback.seasonStart)}
-        {box(guess.occupation, feedback.occupation)}
-        {box(guess.affiliation, feedback.affiliation)}
-        {box(guess.nationality, feedback.nationality)}
-        {box(guess.gender, feedback.gender)}
+  return (
+    <div className="feedback-row">
+      {box(guess.name, true)}
+      {box(guess.seasonStart, feedback.seasonStart)}
+      {box(guess.occupations.join(", "), feedback.occupations)}
+      {box(guess.affiliations.join(", ") || "None", feedback.affiliations)}
+      {box(guess.nationalities.join(", "), feedback.nationalities)}
+      {box(guess.gender, feedback.gender)}
     </div>
-    )
+  )
 }
