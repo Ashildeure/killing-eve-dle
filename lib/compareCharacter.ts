@@ -1,13 +1,16 @@
 import { Character } from "@/types/character"
 
 function compareArray(arr1: string[], arr2: string[]) {
-  const common = arr1.filter(value => arr2.includes(value))
+    if (arr1.length === 0 && arr2.length === 0) {
+        return "correct"
+    }
+    const common = arr1.filter(value => arr2.includes(value))
 
-  if (common.length === 0) return false
-  if (common.length === arr1.length && common.length === arr2.length)
-    return "correct"
+    if (common.length === 0) return false
+    if (common.length === arr1.length && common.length === arr2.length)
+        return "correct"
 
-  return "semi"
+    return "semi"
 }
 
 export function compareCharacter(

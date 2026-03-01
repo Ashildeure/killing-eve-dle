@@ -50,7 +50,7 @@ export default function GuessInput({ onGuess, guesses }: Props) {
   }
 
   return (
-    <div className="relative">
+    <div className="guess-input-wrapper">
       {/* Input */}
       <input
         className="guess-input"

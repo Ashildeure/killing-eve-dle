@@ -102,17 +102,26 @@ input.guess-input:focus {
   box-shadow: 0 0 5px rgba(225, 29, 72, 0.5);
 }
 
+.guess-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
 /* Dropdown autocomplete */
 .autocomplete-dropdown {
   position: absolute;
-  left: 54px;
-  width: 90.5%;
+  left: 0;
+  width: 100%;
+  margin-top: 0.5rem;
+
   max-height: 15rem;
   overflow-y: auto;
+
   background-color: #111;
   border: 1px solid #333;
   border-radius: 0.75rem;
   z-index: 50;
+
   box-shadow: 0 0 10px rgba(225,29,72,0.3);
 }
 
@@ -130,8 +139,8 @@ input.guess-input:focus {
 }
 
 .autocomplete-item img {
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   object-fit: cover;
 }

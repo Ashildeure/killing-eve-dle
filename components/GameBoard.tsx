@@ -18,7 +18,8 @@ export default function GameBoard() {
     "/gifs/win2.gif",
     "/gifs/win3.gif",
     "/gifs/win4.gif",
-    "/gifs/win5.gif"
+    "/gifs/win5.gif",
+    "/gifs/win6.gif"
     ]
 
     const [winGif, setWinGif] = useState<string | null>(null)
