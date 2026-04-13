@@ -3,6 +3,7 @@
 import { useState, useEffect, KeyboardEvent } from "react"
 import { characters } from "@/data/characters"
 import { Character } from "@/types/character"
+import { useTranslations } from "next-intl"
 import Image from "next/image"
 
 type Props = {
@@ -14,6 +15,7 @@ export default function GuessInput({ onGuess, guesses }: Props) {
   const [query, setQuery] = useState("")
   const [open, setOpen] = useState(false)
   const [filtered, setFiltered] = useState<Character[]>([])
+  const t = useTranslations()
 
   useEffect(() => {
     // Filtrer par query et exclure les persos déjà devinés
@@ -54,7 +56,7 @@ export default function GuessInput({ onGuess, guesses }: Props) {
       {/* Input */}
       <input
         className="guess-input"
-        placeholder="Search character..."
+        placeholder={t("searchPlaceholder")}
         value={query}
         onChange={e => {
           setQuery(e.target.value)

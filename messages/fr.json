@@ -1,0 +1,16 @@
+{
+  "searchPlaceholder": "Rechercher un personnage...",
+  "noCharacter": "Aucun personnage trouvé",
+  "playAgain": "Rejouer",
+  "title": "Killing Eve",
+  "subtitle": "Devinez le personnage",
+  "youGotIt": "🎉 Vous avez trouvé !",
+  "headers": {
+    "name": "Nom",
+    "season": "Saison",
+    "occupation": "Métier",
+    "affiliation": "Affiliation",
+    "nationality": "Nationalité",
+    "gender": "Genre"
+  }
+}

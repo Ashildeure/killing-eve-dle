@@ -35,14 +35,14 @@ export default function FeedbackRow({ guess, feedback }: Props) {
   return (
     <div className="feedback-row">
       {box(guess.name, feedback.name)}
-      {box(
-            guess.seasonStart,
-            feedback.seasonStart === "semi" ? false : feedback.seasonStart
-        )}
+      {box(guess.gender, feedback.gender)}
+      {box(guess.nationalities.join(", "), feedback.nationalities)}
       {box(guess.occupations.join(", "), feedback.occupations)}
       {box(guess.affiliations.join(", ") || "None", feedback.affiliations)}
-      {box(guess.nationalities.join(", "), feedback.nationalities)}
-      {box(guess.gender, feedback.gender)}
+      {box(
+        guess.seasonStart,
+        feedback.seasonStart === "semi" ? false : feedback.seasonStart
+      )}
     </div>
   )
 }

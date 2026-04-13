@@ -1,0 +1,16 @@
+{
+  "searchPlaceholder": "Search character...",
+  "noCharacter": "No character found",
+  "playAgain": "Play Again",
+  "title": "Killing Eve",
+  "subtitle": "Guess the character",
+  "youGotIt": "🎉 You got it!",
+  "headers": {
+    "name": "Name",
+    "season": "Season",
+    "occupation": "Occupation",
+    "affiliation": "Affiliation",
+    "nationality": "Nationality",
+    "gender": "Gender"
+  }
+}
